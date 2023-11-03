@@ -12,8 +12,8 @@
 
 <body>
     <div class="container">
-        <header id="hd" class="d-flex jcb aic">
-            <h1><a href=""><img src="./img/logo.png" alt="로고"></a></h1>
+        <header id="hd" class="d-flex jcb aic h100">
+            <h1><a href="#none"><img src="./img/logo.png" alt="로고"></a></h1>
             <ul id="gnb" class="d-flex">
                 <li class="rel d1li">
                     <a href="#none" class="d1a">대메뉴</a>
@@ -21,7 +21,6 @@
                         <li>소메뉴</li>
                         <li>소메뉴</li>
                         <li>소메뉴</li>
-                        <li>소메뉴</li>
                     </ul>
                 </li>
                 <li class="rel d1li">
@@ -40,12 +39,12 @@
                         <li>소메뉴</li>
                         <li>소메뉴</li>
                         <li>소메뉴</li>
+                        <li>소메뉴</li>
                     </ul>
                 </li>
                 <li class="rel d1li">
                     <a href="#none" class="d1a">대메뉴</a>
                     <ul class="abs d2ul">
-                        <li>소메뉴</li>
                         <li>소메뉴</li>
                         <li>소메뉴</li>
                         <li>소메뉴</li>
@@ -53,10 +52,45 @@
                 </li>
             </ul>
         </header>
-        
-        <div id="swiper"></div>
-        <div id="threeBanner"></div>
-        <footer id="fd"></footer>
+
+        <div id="swiper" class="ofh h300"> <!--3중구조-->
+            <div class="swiper-wrapper d-flex"> <!--d-flex으로 주면 스크롤이 생겨서 바깥에 있는 swiper에 ofh을 줘야함 -->
+                <div class="swiper-slide">
+                    <img src="./img/banner0.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/banner1.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/banner2.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div id="threeBanner" class="d-flex h200">
+            <div class="tabs">
+                
+            </div>
+            <div>
+                <a href="#none"><img src="" alt="">이미지</a>
+            </div>
+            <div>
+                <a href="#none"><img src="" alt="">링크이미지</a>
+            </div>
+        </div>
+
+        <footer id="fd" class="d-flex jcb h100">
+            <h2><a href="#none"><img src="./img/footerlogo.png" alt="로고"></a></h2>
+            <div>
+                <ul class="d-flex">
+                    <li><a href="#none">하단메뉴</a></li>
+                    <li><a href="#none">하단메뉴</a></li>
+                    <li><a href="#none">하단메뉴</a></li>
+                    <li><a href="#none">하단메뉴</a></li>
+                </ul>
+                <p>copy</p>
+            </div>
+        </footer>
     </div>
 
 </body>

@@ -8,19 +8,20 @@ li {
     list-style: none;
 }
 
-a:hover {
-    color: red;
+a {
+    text-decoration: none;
 }
+
 
 .bg-check {
     background-color: gray;
 }
 
-.position-rel {
+.rel {
     position: relative;
 }
 
-.position-abs {
+.abs {
     position: absolute;
 }
 
@@ -59,4 +60,36 @@ a:hover {
 .container {
     width: 1200px;
     margin: 0 auto;
+}
+
+/*layout*/
+
+.d1a {
+    padding: 2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.d2ul {
+    background-color: transparent;
+    border: 1px solid transparent;
+    left: 0;
+    right: 0;
+    top: 100%;
+    text-indent: 2rem;
+    line-height: 2;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s;
+}
+
+#gnb .d1li:hover .d2ul {
+    max-height: 180px;
+    border-color: #222;
+    background-color: white;
+
+}
+
+#threeBanner>* {
+    width: 33.33%;
 }
