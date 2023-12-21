@@ -19,12 +19,25 @@
       background-size: cover;
       transition: .5s;
     }
+
+    .banner .btns {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .banner .btns span.act {
+      color: red;
+      /* act 들어온곳은 red로 바껴라 */
+    }
   </style>
 </head>
 
 <body>
+  <section class="banner">
+    <div id="banner" class="banner" style="background-image: url(img/banner_0.jpg);"></div>
 
-  <div id="banner" class="banner" style="background-image: url(img/banner_0.jpg);"></div>
+    <div class="btns"></div>
+  </section>
   <script>
     /*
     웹기능사문제
@@ -35,13 +48,37 @@
 
     let count = 0;
 
-    const autocolor = () => {
+    const contentnum = 6; //슬라이드 개수
+    //버튼 만들기
+    let btntag = "";
+    for (i = 0; i < contentnum; i++) {
+      btntag += "<span>" + i + "</span>"
+
+    }
+
+    document.querySelector(".banner .btns").innerHTML = btntag;
+    document.querySelectorAll(".banner .btns span")[count].classList = "act" 
+    //첫번째 span만 act를 넣어라
+
+    const autocolor = () => { // 3초 뒤부터 주기적으로 3초마다 실행
       count++;
-      count %= 6;
+      count %= contentnum;
       document.querySelector("#banner").style.backgroundImage = `url(img/banner_${count}.jpg) `;
+     
+      document.querySelectorAll(".banner .btns span").forEach((el, idx) => {
+     
+        if (count === idx) {
+          el.classList = "act"
+        } else {
+          el.classList = ""
+        }
+
+      })
+
     }
 
     setInterval(function () { autocolor(); }, 3000)
+
 
 
   </script>
