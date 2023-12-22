@@ -2,63 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>슬라이드 배너 넣기</title>
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주기적인 처리 / window 시간차마다 실행하기</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <section class="banner">
-    <div id="banner" class="banner" style="background-image: url(img/banner_0.jpg);"></div>
+    <section class="banner">
+        <div id="banner" class="banner">
+        </div>
+        <div class="btns">
+        </div>
+        <div id="stopplay" onclick="toggle()">stop</div>
+    </section>
+    <script>
+        let count = 0; // 배경과 버튼활성화버튼 번호
+        const contentnum = 6; //전체개수
+        let status = true; // stop출력
+        let toggletext = "stop"
 
-    <div class="btns"></div>
-  </section>
-  <script>
-    /*
-    웹기능사문제
-    1. 3초마다 서서히 나타났다 사라지는 배너효과를 구현
-    2. 3초마다 좌우로 슬라이드하면서 움직이는 효과
-    3. 3초마다 위아래로 슬라이드 하면서 움직이는 효과
-    */
-
-    let count = 0;
-
-    const contentnum = 6; //슬라이드 개수
-    //버튼 만들기
-    let btntag = "";
-    for (i = 0; i < contentnum; i++) {
-      btntag += "<span>" + i + "</span>"
-
-    }
-
-    document.querySelector(".banner .btns").innerHTML = btntag;
-    document.querySelectorAll(".banner .btns span")[count].classList = "act" 
-    //첫번째 span만 act를 넣어라
-
-    const autocolor = () => { // 3초 뒤부터 주기적으로 3초마다 실행
-      count++;
-      count %= contentnum;
-      document.querySelector("#banner").style.backgroundImage = `url(img/banner_${count}.jpg) `;
-     
-      document.querySelectorAll(".banner .btns span").forEach((el, idx) => {
-     
-        if (count === idx) {
-          el.classList = "act"
-        } else {
-          el.classList = ""
+        const toggle = () => {
+            if (status) {
+                toggletext = "stop";
+                status = false;
+                clearInterval(autobackground);
+            } else {
+                toggletext = "play";
+                status = true;
+                autobackground = setInterval(function () {
+                    count++;
+                    count %= contentnum;
+                    btnact(count);
+                }, 2000);
+            }
+            document.getElementById("stopplay").innerHTML = toggletext;
         }
 
-      })
+        let btntag = "";
+        for (i = 0; i < contentnum; i++) {
+            btntag += "<span>" + i + "</span>";
+        }
+        document.querySelector(".banner .btns").innerHTML = btntag;
 
-    }
+        btnact(count);
 
-    setInterval(function () { autocolor(); }, 3000)
+        let autobackground = setInterval(function () {
+            count++;
+            count %= contentnum;
+            btnact(count);
+        }, 2000);
 
+        document.querySelectorAll(".banner .btns span").forEach((el, idx) => {
+            el.addEventListener('click', function () {
+                clearInterval(autobackground);
+                status = false;
+                toggle();
+                count = idx;
+                btnact(count);
+                // autobackground = setInterval(function () {
+                //     count++;
+                //     count %= contentnum;
+                //     btnact(count);
+                // }, 2000);
+            })
+        })
 
-
-  </script>
-
+        function btnact(c) {
+            //배경이미지, 버튼활성화
+            document.querySelector("#banner").style.backgroundImage = `url(img/banner_${c}.jpg)`;
+            document.querySelectorAll(".banner .btns span").forEach((el, idx) => {
+                if (c === idx) {
+                    el.classList = 'act'
+                } else {
+                    el.classList = ''
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
