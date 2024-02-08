@@ -156,3 +156,19 @@ header {
   z-index: 10000000;
 
 }
+
+
+/* fade */
+
+.swiper-slide{
+  left: 0;
+  width: 100%;
+  top:0;
+  opacity: 0;
+  transition: .5s;
+}
+
+
+.active.swiper-slide{
+  opacity: 1;
+}
