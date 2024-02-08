@@ -26,7 +26,6 @@ a:hover {
 .rel {
   position: relative;
 }
-
 .abs {
   position: absolute;
 }
@@ -34,17 +33,53 @@ a:hover {
 .d-flex {
   display: flex;
 }
-
 .d-none {
   display: none;
 }
-
-.w200 {
-  width: 200;
+.d-block {
+  display: block;
+}
+.ofh{
+  overflow: hidden;
+}
+.red{
+  background-color: red;
 }
 
+
+.h100 {
+  height: 100px;
+}
+.h200 {
+  height: 200px;
+}
+.h350 {
+  height: 350px;
+}
+.w33 {
+  width: 33.333%;
+}
+.w200 {
+  width: 200px;
+}
 .w800 {
-  width: 800;
+  width: 800px;
+}
+
+
+/* 많이 쓰임 */
+
+.text-center {
+  text-align: center;
+}
+.jcc {
+  justify-content: center;
+}
+.jcb {
+  justify-content: space-between;
+}
+.aic {
+  align-items: center;
 }
 
 
@@ -53,6 +88,12 @@ a:hover {
 header {}
 
 .content {}
+
+
+
+
+
+
 
 #popup {
 
