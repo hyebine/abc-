@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+
+/* 공통클래스 */
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: mediumspringgreen;
+}
+
+.container {
+  width: 1000px;
+
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.w200 {
+  width: 200;
+}
+
+.w800 {
+  width: 800;
+}
+
+
+/* 레이아웃 */
+
+header {}
+
+.content {}
+
+#popup {
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  z-index: 10000000;
+
+}
