@@ -4,10 +4,10 @@ $(function(){
 
   function anifun(){
         $(".swiper-wapper").animate({
-          "marginLeft" : -$(".swiper-slide").width() 
+          "marginTop" : -$(".swiper").height() 
         }, 400, function(){
           $(".swiper-wapper .swiper-slide").eq(0).appendTo($(".swiper-wapper"))
-          $(".swiper-wapper").css("margin-left" , 0)
+          $(".swiper-wapper").css({"marginTop" : 0})
 
         })
     }
