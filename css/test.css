@@ -127,7 +127,18 @@ a {
 
 }
 
+
+
+/* abcd 동일 */
+
+/* 대메뉴 활성화 */
 #gnb li:hover>a {
   /* background-color: black; */
   color: white;
+}
+
+/* 소메뉴 활성화 */
+
+#gnb ul li:hover a {
+  color: yellow;
 }
