@@ -12,6 +12,13 @@
   <script>
     $(function () {
 
+      setInterval(
+        function () {
+          $('.swiper-wrapper').animate({ "marginLeft": -1200 }, 400, function () {
+            $('.swiper-wrapper > div').eq(0).appendTo($('.swiper-wrapper'))
+            $('.swiper-wrapper').css({ "marginLeft": 0 })
+          })
+        }, 3000)
     })
   </script>
 </head>
@@ -71,7 +78,7 @@
         <!-- ofh 준 태그에 높이를 주는게 좋다. -->
 
         <!-- 슬라이드배너 -->
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper d-flex">
           <div class="swiper-slide"><img src="./img/slide1.png" alt="슬라이드이미지1"></div>
           <div class="swiper-slide"><img src="./img/slide2.png" alt="슬라이드이미지2"></div>
           <div class="swiper-slide"><img src="./img/slide3.png" alt="슬라이드이미지3"></div>
