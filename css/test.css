@@ -75,3 +75,41 @@ a {
 .w33 {
   width: 33.333%;
 }
+
+/* 상단 */
+
+#hd {
+  background-color: yellow;
+}
+
+#gnb>li>a {
+  font-size: 1.8rem;
+  padding: 0 2.5rem;
+}
+
+#gnb ul {
+  background-color: black;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  width: 100%;
+}
+
+
+/* padding 대신 가상선택자 */
+
+#gnb ul::after,
+#gnb ul::before {
+  content: "";
+  display: block;
+  height: 1rem;
+}
+
+#gnb ul a {
+  color: white;
+  line-height: 2.2;
+  font-size: 1.2rem;
+  text-indent: 3rem;
+  display: block;
+  /* text-indent 쓸때 block을 줘야함 */
+}
