@@ -54,6 +54,16 @@
       })
 
 
+      // 공지사항 첫번째 클릭 팝업
+
+      $('.notice li:first-child a').click(function () {
+        $("#pop").show()
+      })
+
+      $("#pop button").click(function () {
+        $("#pop").hide()
+      })
+
     })
   </script>
 </head>
@@ -133,12 +143,12 @@
 
           <div class="rel">
             <div class="on abs">
-              <ul>
-                <li><a href="">공지글</a></li>
-                <li><a href="">공지글</a></li>
-                <li><a href="">공지글</a></li>
-                <li><a href="">공지글</a></li>
-                <li><a href="">공지글</a></li>
+              <ul class="notice">
+                <li><a href="#none">공지글</a></li>
+                <li><a href="#none">공지글</a></li>
+                <li><a href="#none">공지글</a></li>
+                <li><a href="#none">공지글</a></li>
+                <li><a href="#none">공지글</a></li>
               </ul>
             </div>
             <div class="abs">
@@ -154,10 +164,10 @@
 
 
         <div class="w33">
-          <a href=""><img src="./img/banner.png" class="w-100" alt=""></a>
+          <a href="#none"><img src="./img/banner.png" class="w-100" alt=""></a>
         </div>
         <div class="w33">
-          <a href=""><img src="./img/banner.png" class="w-100" alt=""></a>
+          <a href="#none"><img src="./img/banner.png" class="w-100" alt=""></a>
         </div>
       </div>
 
@@ -166,6 +176,12 @@
     <footer id="ft">
       <div class="container m-auto h100"></div>
     </footer>
+
+    <!-- 팝업 -->
+    <div id="pop" class="abs">
+      <p>공지첫글 클릭시 화면노출</p>
+      <button>닫기</button>
+    </div>
   </div>
 </body>
 

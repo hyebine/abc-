@@ -248,3 +248,21 @@ a {
 .tabwrap>div>div>div {
   display: none;
 }
+
+
+/* 팝업 */
+
+#pop {
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 9999999999999999;
+
+  /* 확인후 */
+  display: none;
+}
