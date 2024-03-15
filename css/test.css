@@ -95,7 +95,9 @@ a {
   width: 100%;
 
   /* 롤오버 */
-  max-height: 0;
+  /* max-height: 0; */
+  height: 0;
+
   overflow: hidden;
   transition: 0.5s;
 }
@@ -128,6 +130,13 @@ a {
 }
 
 
+/* 한번에 나오게 하기 */
+#gnb:hover ul {
+  height: 350px;
+
+}
+
+
 
 /* abcd 동일 */
 
@@ -140,5 +149,7 @@ a {
 /* 소메뉴 활성화 */
 
 #gnb ul li:hover a {
-  color: yellow;
+  color: black;
+  background-color: yellow;
+  display: block;
 }
