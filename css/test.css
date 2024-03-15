@@ -93,6 +93,11 @@ a {
   left: 0;
   min-width: 150px;
   width: 100%;
+
+  /* 롤오버 */
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 
@@ -112,4 +117,17 @@ a {
   text-indent: 3rem;
   display: block;
   /* text-indent 쓸때 block을 줘야함 */
+}
+
+
+/* 롤오버 */
+
+#gnb li:hover ul {
+  max-height: 350px;
+
+}
+
+#gnb li:hover>a {
+  /* background-color: black; */
+  color: white;
 }
