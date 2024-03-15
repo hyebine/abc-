@@ -232,3 +232,19 @@ a {
 .swiper-slide.act {
   opacity: 1;
 }
+
+
+/* 탭메뉴 */
+
+
+.tabwrap h2.on {
+  color: red;
+}
+
+.tabwrap .on {
+  display: block !important;
+}
+
+.tabwrap>div>div>div {
+  display: none;
+}

@@ -45,6 +45,15 @@
       }, 3000)
 
 
+      // tab
+
+      $('.tabwrap h2').click(function () {
+        $(this).addClass("on").siblings().removeClass("on");
+        // 갤러리 바디 ,공지 바디
+        $(".tabwrap>div>div>div").eq($(this).index()).addClass("on").siblings().removeClass("on")
+      })
+
+
     })
   </script>
 </head>
@@ -115,9 +124,35 @@
 
       <!-- 3tab -->
       <div class="d-flex w-100 justify-between align-center tabwrap h200">
+
         <div class="w33">
-          공지랑 갤러리
+          <div class="d-flex">
+            <h2 class="on">공지사항</h2>
+            <h2>갤러리</h2>
+          </div>
+
+          <div class="rel">
+            <div class="on abs">
+              <ul>
+                <li><a href="">공지글</a></li>
+                <li><a href="">공지글</a></li>
+                <li><a href="">공지글</a></li>
+                <li><a href="">공지글</a></li>
+                <li><a href="">공지글</a></li>
+              </ul>
+            </div>
+            <div class="abs">
+              <ul class="d-flex">
+                <li><img src="./img/tab.png" alt="갤러리1"></li>
+                <li><img src="./img/tab2.png" alt="갤러리2"></li>
+                <li><img src="./img/tab3.png" alt="갤러리3"></li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+
+
         <div class="w33">
           <a href=""><img src="./img/banner.png" class="w-100" alt=""></a>
         </div>
