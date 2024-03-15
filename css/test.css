@@ -214,3 +214,21 @@ a {
   background-color: yellow;
   display: block;
 }
+
+
+
+
+/* 슬라이드 */
+
+/* 페이드 배너 */
+
+.swiper-slide {
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.swiper-slide.act {
+  opacity: 1;
+}
